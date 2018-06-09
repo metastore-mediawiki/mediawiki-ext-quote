@@ -1,0 +1,20 @@
+.mw-ext-quote {
+	background-color: hsl(0, 0%, 96%);
+	border-left: .3em solid hsl(0, 0%, 86%);
+	margin: 1em 0;
+	padding: 1em;
+	width: 50%;
+	footer {
+		color: hsl(0, 0%, 48%);
+		font-style: italic;
+		text-align: right;
+	}
+	cite {
+		span {
+			display: inline-block;
+			&:last-child {
+				margin-left: .5rem;
+			}
+		}
+	}
+}

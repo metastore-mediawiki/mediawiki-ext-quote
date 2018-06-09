@@ -1,0 +1,49 @@
+{
+	"name": "MW_EXT_Quote",
+	"version": "1.0.0",
+	"author": [
+		"[https://kitsune.solar/ Kitsune Solar]",
+		"[https://metastore.pro/ METASTORE]",
+		"..."
+	],
+	"url": "https://metastore.pro/",
+	"descriptionmsg": "mw-ext-quote-desc",
+	"license-name": "[https://www.gnu.org/licenses/gpl-3.0.txt GPL-3.0]",
+	"type": "parserhook",
+	"require": {
+		"MediaWiki": ">= 1.30.0"
+	},
+	"AutoloadClasses": {
+		"MW_EXT_Quote": "MW_EXT_Quote.class.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"MW_EXT_Quote::onParserFirstCallInit"
+		],
+		"BeforePageDisplay": [
+			"MW_EXT_Quote::onBeforePageDisplay"
+		]
+	},
+	"MessagesDirs": {
+		"MW_EXT_Quote": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.mw.quote.styles": {
+			"styles": [
+				"styles/theme.css"
+			],
+			"position": "top",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "MW_EXT_Quote/modules"
+	},
+	"manifest_version": 2
+}
