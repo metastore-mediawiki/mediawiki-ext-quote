@@ -1,9 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\MW_EXT_Quote;
+
+use OutputPage, Parser, PPFrame, Skin;
+
 /**
  * Class MW_EXT_Quote
  * ------------------------------------------------------------------------------------------------------------------ */
-
 class MW_EXT_Quote {
 
 	/**
@@ -26,7 +29,7 @@ class MW_EXT_Quote {
 	 * @param Parser $parser
 	 *
 	 * @return bool
-	 * @throws MWException
+	 * @throws \MWException
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onParserFirstCallInit( Parser $parser ) {
@@ -89,7 +92,7 @@ class MW_EXT_Quote {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
-		$out->addModuleStyles( array( 'ext.mw.quote.styles' ) );
+		$out->addModuleStyles( [ 'ext.mw.quote.styles' ] );
 
 		return true;
 	}
