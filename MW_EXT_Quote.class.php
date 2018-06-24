@@ -3,25 +3,12 @@
 namespace MediaWiki\Extension\MW_EXT_Quote;
 
 use OutputPage, Parser, PPFrame, Skin;
+use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
 
 /**
  * Class MW_EXT_Quote
  * ------------------------------------------------------------------------------------------------------------------ */
 class MW_EXT_Quote {
-
-	/**
-	 * Clear DATA (escape html).
-	 *
-	 * @param $string
-	 *
-	 * @return string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
-	private static function clearData( $string ) {
-		$outString = htmlspecialchars( trim( $string ), ENT_QUOTES );
-
-		return $outString;
-	}
 
 	/**
 	 * Register tag function.
@@ -51,15 +38,15 @@ class MW_EXT_Quote {
 
 	public static function onRenderTag( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: source.
-		$getSource = self::clearData( $args['source'] ?? '' ?: '' );
+		$getSource = MW_EXT_Core::outClear( $args['source'] ?? '' ?: '' );
 		$outSource = $getSource;
 
 		// Argument: person.
-		$getPerson = self::clearData( $args['person'] ?? '' ?: '' );
+		$getPerson = MW_EXT_Core::outClear( $args['person'] ?? '' ?: '' );
 		$outPerson = empty( $getPerson ) ? '' : '<span><i class="far fa-user fa-fw"></i> <a href="' . $outSource . '" target="_blank">' . $getPerson . '</a></span>';
 
 		// Argument: date.
-		$getDate = self::clearData( $args['date'] ?? '' ?: '' );
+		$getDate = MW_EXT_Core::outClear( $args['date'] ?? '' ?: '' );
 		$outDate = empty( $getDate ) ? '' : '<span><i class="far fa-clock fa-fw"></i> ' . $getDate . '</span>';
 
 		// Get content.
