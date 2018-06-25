@@ -61,7 +61,7 @@ class MW_EXT_Quote {
 		}
 
 		// Out HTML.
-		$outHTML = '<blockquote class="mw-ext-quote" cite="' . $outSource . '"><div class="mw-ext-quote-content">' . $outContent . '</div>' . $outFooter . '</blockquote>';
+		$outHTML = '<blockquote class="mw-ext-quote navigation-not-searchable" cite="' . $outSource . '"><div class="mw-ext-quote-content">' . $outContent . '</div>' . $outFooter . '</blockquote>';
 
 		// Out parser.
 		$outParser = $outHTML;
