@@ -20,7 +20,7 @@ class MW_EXT_Quote {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'quote', __CLASS__ . '::onRenderTag' );
+		$parser->setHook( 'quote', [ __CLASS__, 'onRenderTag' ] );
 
 		return true;
 	}
