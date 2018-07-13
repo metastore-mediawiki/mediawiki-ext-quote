@@ -7,7 +7,7 @@ use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
 
 /**
  * Class MW_EXT_Quote
- * ------------------------------------------------------------------------------------------------------------------ */
+ */
 class MW_EXT_Quote {
 
 	/**
@@ -17,8 +17,7 @@ class MW_EXT_Quote {
 	 *
 	 * @return bool
 	 * @throws \MWException
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setHook( 'quote', [ __CLASS__, 'onRenderTag' ] );
 
@@ -34,8 +33,7 @@ class MW_EXT_Quote {
 	 * @param PPFrame $frame
 	 *
 	 * @return string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onRenderTag( $input, $args = [], Parser $parser, PPFrame $frame ) {
 		// Argument: source.
 		$getSource = MW_EXT_Core::outClear( $args['source'] ?? '' ?: '' );
@@ -76,8 +74,7 @@ class MW_EXT_Quote {
 	 * @param Skin $skin
 	 *
 	 * @return bool
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		$out->addModuleStyles( [ 'ext.mw.quote.styles' ] );
 
