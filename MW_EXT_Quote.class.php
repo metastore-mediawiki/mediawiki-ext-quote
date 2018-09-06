@@ -39,8 +39,8 @@ class MW_EXT_Quote {
 		$outSource = $getSource;
 
 		// Argument: person.
-		$getPerson = MW_EXT_Kernel::outClear( $args['person'] ?? '' ?: '' );
-		$outPerson = empty( $getPerson ) ? '' : '<span><i class="far fa-user fa-fw"></i> <a href="' . $outSource . '" target="_blank">' . $getPerson . '</a></span>';
+		$getSign = MW_EXT_Kernel::outClear( $args['sign'] ?? '' ?: '' );
+		$outSign = empty( $getSign ) ? '' : '<span><i class="far fa-user fa-fw"></i> <a href="' . $outSource . '" target="_blank">' . $getSign . '</a></span>';
 
 		// Argument: date.
 		$getDate = MW_EXT_Kernel::outClear( $args['date'] ?? '' ?: '' );
@@ -51,8 +51,8 @@ class MW_EXT_Quote {
 		$outContent = $parser->recursiveTagParse( $getContent, $frame );
 
 		// Check person and date arguments, and set footer.
-		if ( $outPerson || $outDate ) {
-			$outFooter = '<footer><cite>' . $outPerson . $outDate . '</cite></footer>';
+		if ( $outSign || $outDate ) {
+			$outFooter = '<footer><cite>' . $outSign . $outDate . '</cite></footer>';
 		} else {
 			$outFooter = '';
 		}
