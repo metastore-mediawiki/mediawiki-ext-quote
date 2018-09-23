@@ -5,7 +5,7 @@
 ## Синтаксис
 
 ```
-<quote source="[SOURCE]" date="[DATE]" person="[PERSON]">[CONTENT]</quote>
+<quote source="[SOURCE]" date="[DATE]" sign="[PERSON]">[CONTENT]</quote>
 ```
 
 ## Установка
