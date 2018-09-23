@@ -27,13 +27,13 @@ class MW_EXT_Quote {
 	 * Render tag function.
 	 *
 	 * @param $input
+	 * @param array $args
 	 * @param Parser $parser
 	 * @param PPFrame $frame
-	 * @param array $args
 	 *
 	 * @return string
 	 */
-	public static function onRenderTag( $input, Parser $parser, PPFrame $frame, $args = [] ) {
+	public static function onRenderTag( $input, array $args, Parser $parser, PPFrame $frame ) {
 		// Argument: source.
 		$getSource = MW_EXT_Kernel::outClear( $args['source'] ?? '' ?: '' );
 		$outSource = $getSource;
